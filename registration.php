@@ -3,7 +3,6 @@ include ('config.php');
 
   if(isset($_POST['register_btn']))
     {
-        
       $Name=$_POST["name"];
       $Mobno=$_POST["mobno"];
       $Email=$_POST["email"];
@@ -22,7 +21,6 @@ include ('config.php');
         else
           {
             echo "Sorry,there is an error: " .$sql . "<br>" . mysqli_error($conn);
-          }
-       
+          }  
     }
 ?>
