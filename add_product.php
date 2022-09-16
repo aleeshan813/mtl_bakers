@@ -3,7 +3,9 @@ include ('config.php');
 
   if(isset($_POST['add_product_btn']))
     {
-      $File=$_POST["filename"];
+      $Filename=$_FILES["fileToupload"]["name"];
+      $File=$_FILES["fileToupload"]["tmp_name"];
+      move_uploaded_file($File,"../images/$Filename");
       $Pname=$_POST["pname"];
       $Details=$_POST["details"];
       $sql="INSERT INTO `tb_add_product`(`filename`, `pname`, `details`) VALUES ('$File','$Pname','$Details')";
